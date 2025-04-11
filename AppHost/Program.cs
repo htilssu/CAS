@@ -18,4 +18,7 @@ var catalog = builder.AddProject<Catalog_API>("catalog")
     .WithReference(redis)
     .WithReference(catalogDb);
 
+var identity = builder.AddProject<Identity_API>("identity")
+    .WithReference(identityDb);
+
 builder.Build().Run();
