@@ -1,4 +1,3 @@
-using Product.API.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Product.API.Domain.Interfaces;
 using Product.API.Infrastructure.Data;
@@ -14,7 +13,7 @@ public class ProductRepository : IProductRepository
         _context = context;
     }
 
-    public async Task<Domain.Entities.Product> GetByIdAsync(int id)
+    public async Task<Domain.Entities.Product?> GetByIdAsync(int id)
     {
         return await _context.Products.FindAsync(id);
     }
@@ -22,13 +21,6 @@ public class ProductRepository : IProductRepository
     public async Task<IEnumerable<Domain.Entities.Product>> GetAllAsync()
     {
         return await _context.Products.ToListAsync();
-    }
-
-    public async Task<IEnumerable<Domain.Entities.Product>> GetByCategoryAsync(string category)
-    {
-        return await _context.Products
-            .Where(p => p.Category == category)
-            .ToListAsync();
     }
 
     public async Task AddAsync(Domain.Entities.Product product)

@@ -18,13 +18,24 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="8.1.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="8.1.1" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Core\Core.csproj" />
       <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="API\Middleware\" />
+      <Folder Include="API\Models\" />
+      <Folder Include="Application\Behaviors\" />
+      <Folder Include="Application\Commands\" />
+      <Folder Include="Application\DTOs\" />
+      <Folder Include="Application\Queries\" />
+      <Folder Include="Application\Validators\" />
       <Folder Include="Domain\Models\" />
     </ItemGroup>
 
