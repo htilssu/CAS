@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Search, ShoppingCart, User, Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 /**
  * Thành phần Header hiển thị thanh điều hướng chính của trang web
@@ -25,25 +25,25 @@ export function Header() {
         {/* Điều hướng - Ẩn trên mobile */}
         <nav className="hidden md:flex items-center gap-6">
           <Link
-            href="/collections/all"
+            href="/category/all"
             className="text-sm font-medium hover:text-indigo-600 transition-colors"
           >
             Tất cả sản phẩm
           </Link>
           <Link
-            href="/collections/featured"
+            href="/category/featured"
             className="text-sm font-medium hover:text-indigo-600 transition-colors"
           >
             Nổi bật
           </Link>
           <Link
-            href="/collections/new"
+            href="/category/new"
             className="text-sm font-medium hover:text-indigo-600 transition-colors"
           >
             Mới
           </Link>
           <Link
-            href="/collections/sale"
+            href="/category/sale"
             className="text-sm font-medium hover:text-indigo-600 transition-colors"
           >
             Khuyến mãi

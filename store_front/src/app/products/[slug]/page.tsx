@@ -2,12 +2,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { Heart, ShoppingCart, TruckIcon } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ProductGrid } from "@/components/product/product-grid";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { ProductGrid } from "@/components/product/ProductGrid";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
 /**
  * Interface cho các sản phẩm trong dữ liệu mẫu
+ * @interface ProductData
+ * @property {string} id - ID của sản phẩm
+ * @property {string} name - Tên sản phẩm
+ * @property {string} slug - Slug URL của sản phẩm
+ * @property {string} category - Danh mục sản phẩm
+ * @property {string} description - Mô tả sản phẩm
+ * @property {string[]} features - Danh sách tính năng/đặc điểm của sản phẩm
+ * @property {string[]} images - Danh sách hình ảnh sản phẩm
+ * @property {number} price - Giá hiện tại của sản phẩm
+ * @property {number} [originalPrice] - Giá gốc của sản phẩm (nếu có giảm giá)
+ * @property {boolean} isFeatured - Sản phẩm nổi bật
+ * @property {boolean} [isNew] - Sản phẩm mới
+ * @property {string[]} availableSizes - Danh sách kích thước có sẵn
+ * @property {string[]} availableColors - Danh sách màu sắc có sẵn
+ * @property {object[]} relatedProducts - Danh sách sản phẩm liên quan
  */
 interface ProductData {
   id: string;
@@ -39,6 +55,7 @@ interface ProductData {
 
 /**
  * Dữ liệu mẫu cho các sản phẩm
+ * @type {Record<string, ProductData>}
  */
 const products: Record<string, ProductData> = {
   "ao-thun-basic-cotton": {
@@ -188,8 +205,30 @@ export default function ProductPage({ params }: ProductPageProps) {
       )
     : 0;
 
+  // Cấu hình breadcrumb
+  const breadcrumbItems = [
+    {
+      label: "Sản phẩm",
+      href: "/products",
+    },
+    {
+      label: product.category,
+      href: `/category/${product.category.toLowerCase()}`,
+    },
+    {
+      label: product.name,
+      active: true,
+    },
+  ];
+
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
+      {/* Breadcrumb */}
+      <Breadcrumb
+        items={breadcrumbItems}
+        className="mb-6 border-b border-zinc-200 pb-2 dark:border-zinc-800"
+      />
+
       <div className="mb-8">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Hình ảnh sản phẩm */}
@@ -231,7 +270,7 @@ export default function ProductPage({ params }: ProductPageProps) {
           {/* Thông tin sản phẩm */}
           <div className="w-full md:w-1/2">
             <div className="mb-2 text-sm text-zinc-500 dark:text-zinc-400">
-              <Link href={`/collections/${product.category.toLowerCase()}`}>
+              <Link href={`/category/${product.category.toLowerCase()}`}>
                 {product.category}
               </Link>
             </div>

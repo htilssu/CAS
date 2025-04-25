@@ -42,28 +42,25 @@ export function Footer() {
             <h3 className="text-lg font-bold">Sản phẩm</h3>
             <ul className="space-y-2 text-sm text-zinc-500 dark:text-zinc-400">
               <li>
-                <Link href="/collections/all" className="hover:text-indigo-600">
+                <Link href="/category/all" className="hover:text-indigo-600">
                   Tất cả sản phẩm
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/collections/featured"
+                  href="/category/featured"
                   className="hover:text-indigo-600"
                 >
                   Nổi bật
                 </Link>
               </li>
               <li>
-                <Link href="/collections/new" className="hover:text-indigo-600">
+                <Link href="/category/new" className="hover:text-indigo-600">
                   Mới
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/collections/sale"
-                  className="hover:text-indigo-600"
-                >
+                <Link href="/category/sale" className="hover:text-indigo-600">
                   Khuyến mãi
                 </Link>
               </li>

@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# NextJS Rule
+
+## RULE:
+
+- Component luôn đặt tên theo kiểu PascalCase, kể cả tên file

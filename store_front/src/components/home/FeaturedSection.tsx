@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { ProductGrid } from "@/components/product/product-grid";
+import { Button } from "@/components/ui/Button";
+import { ProductGrid } from "@/components/product/ProductGrid";
 
 /**
  * Dữ liệu mẫu cho các sản phẩm nổi bật
@@ -69,10 +69,7 @@ export function FeaturedSection() {
           </p>
         </div>
         <Button variant="outline" size="sm" asChild>
-          <Link
-            href="/collections/featured"
-            className="flex items-center gap-1"
-          >
+          <Link href="/category/featured" className="flex items-center gap-1">
             Xem tất cả
             <ArrowRight className="h-4 w-4" />
           </Link>

@@ -1,4 +1,4 @@
-import { ProductCard } from "@/components/product/product-card";
+import { ProductCard } from "@/components/product/ProductCard";
 
 /**
  * Giao diện cho dữ liệu sản phẩm trong lưới
@@ -31,17 +31,25 @@ interface Product {
  * Props cho thành phần ProductGrid
  * @interface ProductGridProps
  * @property {Product[]} products - Danh sách sản phẩm hiển thị
+ * @property {string} [emptyMessage] - Thông báo hiển thị khi không có sản phẩm
  */
 interface ProductGridProps {
   products: Product[];
+  emptyMessage?: string;
 }
 
 /**
  * Thành phần hiển thị lưới sản phẩm
- * @param {ProductGridProps} props - Danh sách sản phẩm
+ * @param {ProductGridProps} props - Props của lưới sản phẩm
  * @returns {JSX.Element} - Thành phần ProductGrid được render
  */
-export function ProductGrid({ products }: ProductGridProps) {
+export function ProductGrid({ products, emptyMessage }: ProductGridProps) {
+  if (products.length === 0 && emptyMessage) {
+    return (
+      <div className="text-center py-10 text-gray-500">{emptyMessage}</div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {products.map((product) => (

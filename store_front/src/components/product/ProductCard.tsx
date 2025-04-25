@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Heart } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/Card";
 
 /**
  * Giao diện cho dữ liệu sản phẩm

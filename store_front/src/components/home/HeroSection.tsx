@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 /**
  * Thành phần hiển thị phần Hero (Banner chính) trên trang chủ
@@ -32,9 +32,9 @@ export function HeroSection() {
                   Khám phá bộ sưu tập mới với những thiết kế độc đáo, phong cách
                   và thoải mái
                 </p>
-                <div className="flex flex-wrap gap-4 pt-2">
+                <div className="mt-8 flex flex-wrap gap-4">
                   <Button size="lg" variant="primary" asChild>
-                    <Link href="/collections/new">Mua sắm ngay</Link>
+                    <Link href="/category/new">Mua sắm ngay</Link>
                   </Button>
                   <Button
                     size="lg"
@@ -42,7 +42,7 @@ export function HeroSection() {
                     className="border-white text-white hover:bg-white/20"
                     asChild
                   >
-                    <Link href="/collections/all">Xem tất cả</Link>
+                    <Link href="/category/all">Xem tất cả</Link>
                   </Button>
                 </div>
               </div>
@@ -74,16 +74,16 @@ export function HeroSection() {
                   Khám phá bộ sưu tập mới với những thiết kế độc đáo, phong cách
                   và thoải mái
                 </p>
-                <div className="flex flex-col gap-3 pt-2">
+                <div className="mt-8 flex flex-col gap-3 pt-2">
                   <Button variant="primary" asChild>
-                    <Link href="/collections/new">Mua sắm ngay</Link>
+                    <Link href="/category/new">Mua sắm ngay</Link>
                   </Button>
                   <Button
                     variant="outline"
                     className="border-white text-white hover:bg-white/20"
                     asChild
                   >
-                    <Link href="/collections/all">Xem tất cả</Link>
+                    <Link href="/category/all">Xem tất cả</Link>
                   </Button>
                 </div>
               </div>

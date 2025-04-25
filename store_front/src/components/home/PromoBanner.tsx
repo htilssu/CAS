@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 /**
  * Thành phần hiển thị banner khuyến mãi
@@ -38,7 +38,7 @@ export function PromoBanner() {
                         hè. Cơ hội có hạn, hãy nhanh tay mua ngay.
                       </p>
                       <Button variant="primary" asChild>
-                        <Link href="/collections/sale">Xem thêm</Link>
+                        <Link href="/category/sale">Xem thêm</Link>
                       </Button>
                     </div>
                   </div>
@@ -71,7 +71,7 @@ export function PromoBanner() {
                       hè
                     </p>
                     <Button variant="primary" asChild>
-                      <Link href="/collections/sale">Xem thêm</Link>
+                      <Link href="/category/sale">Xem thêm</Link>
                     </Button>
                   </div>
                 </div>

@@ -80,7 +80,7 @@ export default function CartPage() {
             Thêm một vài sản phẩm và quay lại đây nhé!
           </p>
           <Button variant="primary" asChild>
-            <Link href="/collections/all">Tiếp tục mua sắm</Link>
+            <Link href="/category/all">Tiếp tục mua sắm</Link>
           </Button>
         </div>
       ) : (
@@ -153,15 +153,14 @@ export default function CartPage() {
             </div>
 
             <div className="mt-8">
-              <Button variant="outline" size="sm" asChild>
-                <Link
-                  href="/collections/all"
-                  className="flex items-center gap-1"
-                >
-                  <ChevronLeft className="h-4 w-4" />
-                  Tiếp tục mua sắm
-                </Link>
-              </Button>
+              <div className="flex flex-col space-y-2">
+                <Button asChild>
+                  <Link href="/checkout">Thanh toán</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href="/category/all">Tiếp tục mua sắm</Link>
+                </Button>
+              </div>
             </div>
           </div>
 
