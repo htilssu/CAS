@@ -1,7 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <Sdk Name="Aspire.AppHost.Sdk" Version="9.2.0"/>
-
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net9.0</TargetFramework>
@@ -9,25 +7,23 @@
         <Nullable>enable</Nullable>
         <UserSecretsId>c914baae-9b59-4875-ae1a-55b6075b36ab</UserSecretsId>
     </PropertyGroup>
-
     <ItemGroup>
-        <PackageReference Include="Aspire.Hosting.AppHost" Version="9.2.0"/>
-        <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.2.0" />
-        <PackageReference Include="Aspire.Hosting.RabbitMQ" Version="9.2.0" />
-        <PackageReference Include="Aspire.Hosting.Redis" Version="9.2.0" />
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="9.2.1" />
+        <PackageReference Include="Aspire.Hosting.NodeJs" Version="9.2.1" />
+        <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.2.1" />
+        <PackageReference Include="Aspire.Hosting.RabbitMQ" Version="9.2.1" />
+        <PackageReference Include="Aspire.Hosting.Redis" Version="9.2.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.4">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
     </ItemGroup>
-
     <ItemGroup>
-      <ProjectReference Include="..\Catalog.API\Catalog.API.csproj" />
-      <ProjectReference Include="..\Identity.API\Identity.API.csproj" />
+        <ProjectReference Include="..\Catalog.API\Catalog.API.csproj" />
+        <ProjectReference Include="..\Identity.API\Identity.API.csproj" />
     </ItemGroup>
-
 </Project>

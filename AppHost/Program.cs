@@ -21,4 +21,9 @@ var catalog = builder.AddProject<Catalog_API>("catalog")
 var identity = builder.AddProject<Identity_API>("identity")
     .WithReference(identityDb);
 
+// Thêm StoreFront NextJS
+builder.AddNpmApp("storefront", "../store_front")
+    .WithEndpoint(targetPort: 3000, name: "storefront")
+    .WithReference(catalog);
+
 builder.Build().Run();
