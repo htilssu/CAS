@@ -5,6 +5,7 @@ import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/Card";
+import { ProductVariant } from "@/lib/types";
 
 /**
  * Giao diện cho dữ liệu sản phẩm
@@ -14,11 +15,13 @@ import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/Card";
  * @property {string} slug - Slug URL của sản phẩm
  * @property {string} category - Danh mục sản phẩm
  * @property {string} image - Đường dẫn hình ảnh sản phẩm
- * @property {number} price - Giá sản phẩm
+ * @property {number} price - Giá cơ bản của sản phẩm
  * @property {number} [originalPrice] - Giá gốc trước khi giảm giá (nếu có)
- * @property {boolean} isFeatured - Có phải là sản phẩm nổi bật
- * @property {boolean} isNew - Có phải là sản phẩm mới
+ * @property {boolean} [isFeatured] - Có phải là sản phẩm nổi bật
+ * @property {boolean} [isNew] - Có phải là sản phẩm mới
  * @property {boolean} [isOutOfStock] - Sản phẩm hết hàng
+ * @property {string} [productType] - Loại sản phẩm
+ * @property {ProductVariant[]} [variants] - Các biến thể của sản phẩm
  */
 interface ProductProps {
   id: string;
@@ -31,6 +34,8 @@ interface ProductProps {
   isFeatured?: boolean;
   isNew?: boolean;
   isOutOfStock?: boolean;
+  productType?: string;
+  variants?: ProductVariant[];
 }
 
 /**
@@ -49,11 +54,27 @@ export function ProductCard({
   isFeatured,
   isNew,
   isOutOfStock,
+  productType,
+  variants,
 }: ProductProps) {
   // Tính phần trăm giảm giá nếu có
   const discountPercentage = originalPrice
     ? Math.round(((originalPrice - price) / originalPrice) * 100)
     : 0;
+
+  // Kiểm tra nếu sản phẩm có nhiều biến thể giá khác nhau
+  const hasPriceVariation =
+    variants && variants.length > 0 && variants.some((v) => v.price !== price);
+
+  // Tìm giá thấp nhất và cao nhất trong các biến thể
+  let minPrice = price;
+  let maxPrice = price;
+
+  if (variants && variants.length > 0) {
+    const prices = variants.map((v) => v.price);
+    minPrice = Math.min(...prices);
+    maxPrice = Math.max(...prices);
+  }
 
   return (
     <Card className="group overflow-hidden transition-all hover:shadow-md">
@@ -92,23 +113,46 @@ export function ProductCard({
       </Link>
 
       <CardContent className="p-4">
-        <div className="text-sm text-zinc-500 dark:text-zinc-400">
-          {category}
+        <div className="flex justify-between">
+          <div className="text-sm text-zinc-500 dark:text-zinc-400">
+            {category}
+          </div>
+          {productType && (
+            <Badge variant="outline" className="text-xs">
+              {productType}
+            </Badge>
+          )}
         </div>
         <Link href={`/products/${slug}`}>
           <CardTitle className="mt-1 line-clamp-1 text-base hover:underline">
             {name}
           </CardTitle>
         </Link>
+
+        {variants && variants.length > 1 && (
+          <div className="mt-2 text-xs text-zinc-500">
+            {variants.length} phiên bản
+          </div>
+        )}
       </CardContent>
 
       <CardFooter className="flex items-center justify-between p-4 pt-0">
         <div className="flex items-center gap-2">
-          <div className="font-medium">{price.toLocaleString()}₫</div>
-          {originalPrice && (
-            <div className="text-sm text-zinc-500 line-through dark:text-zinc-400">
-              {originalPrice.toLocaleString()}₫
+          {hasPriceVariation ? (
+            <div className="font-medium">
+              {minPrice === maxPrice
+                ? `${minPrice.toLocaleString()}₫`
+                : `${minPrice.toLocaleString()} - ${maxPrice.toLocaleString()}₫`}
             </div>
+          ) : (
+            <>
+              <div className="font-medium">{price.toLocaleString()}₫</div>
+              {originalPrice && (
+                <div className="text-sm text-zinc-500 line-through dark:text-zinc-400">
+                  {originalPrice.toLocaleString()}₫
+                </div>
+              )}
+            </>
           )}
         </div>
         <Button
@@ -117,7 +161,7 @@ export function ProductCard({
           disabled={isOutOfStock}
           aria-label="Thêm vào giỏ hàng"
         >
-          {isOutOfStock ? "Hết hàng" : "Thêm vào giỏ"}
+          {isOutOfStock ? "Hết hàng" : "Xem chi tiết"}
         </Button>
       </CardFooter>
     </Card>

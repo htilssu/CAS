@@ -9,7 +9,7 @@ export const categories: Category[] = [
     name: "Áo",
     slug: "ao",
     description: "Các loại áo phong cách hiện đại cho nam và nữ",
-    image: "/images/categories/category-shirts.jpg",
+    image: "/images/categories/category-shirts.svg",
     featured: true,
     subcategories: ["ao-thun", "ao-polo", "ao-somi"],
   },
@@ -39,7 +39,7 @@ export const categories: Category[] = [
     name: "Quần",
     slug: "quan",
     description: "Các loại quần cho mọi hoạt động",
-    image: "/images/categories/category-pants.jpg",
+    image: "/images/categories/category-pants.svg",
     featured: true,
     subcategories: ["quan-jean", "quan-au", "quan-short"],
   },
@@ -70,7 +70,7 @@ export const categories: Category[] = [
     name: "Váy & Đầm",
     slug: "vay-dam",
     description: "Váy và đầm phong cách hiện đại cho mọi dịp",
-    image: "/images/categories/category-dresses.jpg",
+    image: "/images/categories/category-dresses.svg",
     featured: true,
   },
   {
@@ -78,7 +78,7 @@ export const categories: Category[] = [
     name: "Phụ kiện",
     slug: "phu-kien",
     description: "Phụ kiện thời trang để hoàn thiện phong cách của bạn",
-    image: "/images/categories/category-accessories.jpg",
+    image: "/images/categories/category-accessories.svg",
     subcategories: ["tui-xach", "non", "that-lung"],
   },
   {
@@ -101,6 +101,146 @@ export const categories: Category[] = [
     slug: "that-lung",
     description: "Thắt lưng cao cấp từ nhiều chất liệu",
     image: "/images/categories/category-belts.jpg",
+  },
+  {
+    id: "my-pham",
+    name: "Mỹ phẩm",
+    slug: "my-pham",
+    description: "Sản phẩm chăm sóc sắc đẹp và làm đẹp",
+    image: "/images/categories/category-cosmetics.svg",
+    featured: true,
+    subcategories: ["cham-soc-da", "trang-diem", "nuoc-hoa"],
+  },
+  {
+    id: "cham-soc-da",
+    name: "Chăm sóc da",
+    slug: "cham-soc-da",
+    description: "Sản phẩm chăm sóc da mặt và cơ thể",
+    image: "/images/categories/category-skincare.jpg",
+    subcategories: ["sua-rua-mat", "kem-duong", "mat-na"],
+  },
+  {
+    id: "sua-rua-mat",
+    name: "Sữa rửa mặt",
+    slug: "sua-rua-mat",
+    description: "Sữa rửa mặt cho mọi loại da",
+    image: "/images/categories/category-cleanser.jpg",
+  },
+  {
+    id: "kem-duong",
+    name: "Kem dưỡng",
+    slug: "kem-duong",
+    description: "Kem dưỡng ẩm và chăm sóc da",
+    image: "/images/categories/category-moisturizer.jpg",
+  },
+  {
+    id: "mat-na",
+    name: "Mặt nạ",
+    slug: "mat-na",
+    description: "Mặt nạ dưỡng da các loại",
+    image: "/images/categories/category-mask.jpg",
+  },
+  {
+    id: "trang-diem",
+    name: "Trang điểm",
+    slug: "trang-diem",
+    description: "Sản phẩm trang điểm chuyên nghiệp",
+    image: "/images/categories/category-makeup.jpg",
+  },
+  {
+    id: "nuoc-hoa",
+    name: "Nước hoa",
+    slug: "nuoc-hoa",
+    description: "Nước hoa cao cấp cho nam và nữ",
+    image: "/images/categories/category-perfume.jpg",
+  },
+  {
+    id: "cham-soc-ca-nhan",
+    name: "Chăm sóc cá nhân",
+    slug: "cham-soc-ca-nhan",
+    description: "Sản phẩm chăm sóc cá nhân hàng ngày",
+    image: "/images/categories/category-personal-care.svg",
+    subcategories: ["cham-soc-toc", "cham-soc-rang-mieng", "tam-goi"],
+  },
+  {
+    id: "cham-soc-toc",
+    name: "Chăm sóc tóc",
+    slug: "cham-soc-toc",
+    description: "Sản phẩm dành cho mái tóc khỏe đẹp",
+    image: "/images/categories/category-hair-care.jpg",
+  },
+  {
+    id: "cham-soc-rang-mieng",
+    name: "Chăm sóc răng miệng",
+    slug: "cham-soc-rang-mieng",
+    description: "Sản phẩm vệ sinh và chăm sóc răng miệng",
+    image: "/images/categories/category-dental-care.jpg",
+  },
+  {
+    id: "tam-goi",
+    name: "Tắm gội",
+    slug: "tam-goi",
+    description: "Sữa tắm, dầu gội và các sản phẩm tắm gội khác",
+    image: "/images/categories/category-bath.jpg",
+  },
+  {
+    id: "dien-tu",
+    name: "Điện tử",
+    slug: "dien-tu",
+    description: "Thiết bị điện tử và công nghệ",
+    image: "/images/categories/category-electronics.svg",
+    featured: true,
+    subcategories: ["dien-thoai", "laptop", "phu-kien-dien-tu"],
+  },
+  {
+    id: "dien-thoai",
+    name: "Điện thoại",
+    slug: "dien-thoai",
+    description: "Điện thoại thông minh các loại",
+    image: "/images/categories/category-smartphone.jpg",
+  },
+  {
+    id: "laptop",
+    name: "Laptop",
+    slug: "laptop",
+    description: "Máy tính xách tay cho công việc và giải trí",
+    image: "/images/categories/category-laptop.jpg",
+  },
+  {
+    id: "phu-kien-dien-tu",
+    name: "Phụ kiện điện tử",
+    slug: "phu-kien-dien-tu",
+    description: "Phụ kiện cho thiết bị điện tử",
+    image: "/images/categories/category-electronics-accessories.jpg",
+  },
+  {
+    id: "gia-dung",
+    name: "Đồ gia dụng",
+    slug: "gia-dung",
+    description: "Thiết bị và đồ dùng cho gia đình",
+    image: "/images/categories/category-home-appliances.svg",
+    subcategories: ["nha-bep", "phong-ngu", "phong-tam"],
+  },
+  {
+    id: "nha-bep",
+    name: "Nhà bếp",
+    slug: "nha-bep",
+    description: "Đồ dùng và thiết bị nhà bếp",
+    image: "/images/categories/category-kitchen.jpg",
+  },
+  {
+    id: "phong-ngu",
+    name: "Phòng ngủ",
+    slug: "phong-ngu",
+    description: "Đồ dùng và nội thất phòng ngủ",
+    image: "/images/categories/category-bedroom.jpg",
+  },
+  {
+    id: "phong-tam",
+    name: "Phòng tắm",
+    slug: "phong-tam",
+    description: "Đồ dùng và thiết bị phòng tắm",
+    image: "/images/categories/category-bathroom.jpg",
   },
 ];
 
@@ -128,10 +268,67 @@ export const products: Product[] = [
     ],
     price: 199000,
     categoryIds: ["ao", "ao-thun"],
-    availableSizes: ["S", "M", "L", "XL"],
-    availableColors: ["Trắng", "Đen", "Xám", "Xanh Navy"],
+    productType: "quần áo",
     isFeatured: true,
     isNew: true,
+    variantAttributes: [
+      {
+        name: "Màu sắc",
+        values: ["Trắng", "Đen", "Xám", "Xanh Navy"],
+      },
+      {
+        name: "Kích thước",
+        values: ["S", "M", "L", "XL"],
+      },
+    ],
+    variants: [
+      {
+        id: "ao-thun-basic-cotton-trang-s",
+        name: "Áo Thun Basic Cotton - Trắng, Size S",
+        attributes: {
+          "Màu sắc": "Trắng",
+          "Kích thước": "S",
+        },
+        price: 199000,
+        sku: "ATC-TRG-S",
+        images: ["/images/products/ao-thun-basic-1.jpg"],
+      },
+      {
+        id: "ao-thun-basic-cotton-trang-m",
+        name: "Áo Thun Basic Cotton - Trắng, Size M",
+        attributes: {
+          "Màu sắc": "Trắng",
+          "Kích thước": "M",
+        },
+        price: 199000,
+        sku: "ATC-TRG-M",
+        images: ["/images/products/ao-thun-basic-1.jpg"],
+      },
+      {
+        id: "ao-thun-basic-cotton-den-s",
+        name: "Áo Thun Basic Cotton - Đen, Size S",
+        attributes: {
+          "Màu sắc": "Đen",
+          "Kích thước": "S",
+        },
+        price: 199000,
+        sku: "ATC-DEN-S",
+        images: ["/images/products/ao-thun-basic-2.jpg"],
+      },
+      {
+        id: "ao-thun-basic-cotton-den-m",
+        name: "Áo Thun Basic Cotton - Đen, Size M",
+        attributes: {
+          "Màu sắc": "Đen",
+          "Kích thước": "M",
+        },
+        price: 199000,
+        sku: "ATC-DEN-M",
+        images: ["/images/products/ao-thun-basic-2.jpg"],
+      },
+    ],
+    availableSizes: ["S", "M", "L", "XL"],
+    availableColors: ["Trắng", "Đen", "Xám", "Xanh Navy"],
   },
   {
     id: "ao-polo-pique",
@@ -300,30 +497,210 @@ export const products: Product[] = [
     availableColors: ["Đen", "Trắng", "Be", "Xanh rêu"],
     isNew: true,
   },
+  {
+    id: "kem-danh-rang-fresh-mint",
+    name: "Kem Đánh Răng Fresh Mint",
+    slug: "kem-danh-rang-fresh-mint",
+    description:
+      "Kem đánh răng với công thức đột phá giúp làm sạch mảng bám, bảo vệ men răng và mang lại hơi thở thơm mát suốt ngày dài.",
+    features: [
+      "Làm sạch sâu, ngăn ngừa sâu răng",
+      "Bảo vệ men răng khỏi ăn mòn",
+      "Làm trắng răng nhẹ nhàng",
+      "Hương bạc hà thơm mát",
+      "Công thức không chứa paraben",
+    ],
+    images: [
+      "/images/products/kem-danh-rang-1.jpg",
+      "/images/products/kem-danh-rang-2.jpg",
+    ],
+    price: 45000,
+    categoryIds: ["cham-soc-ca-nhan", "cham-soc-rang-mieng"],
+    productType: "chăm sóc cá nhân",
+    brandId: "colgate",
+    isNew: true,
+    variantAttributes: [
+      {
+        name: "Hương vị",
+        values: ["Bạc hà mát lạnh", "Trà xanh", "Thảo dược"],
+      },
+      {
+        name: "Dung tích",
+        values: ["100g", "150g", "200g"],
+      },
+    ],
+    variants: [
+      {
+        id: "kem-danh-rang-bac-ha-100g",
+        name: "Kem Đánh Răng Fresh Mint - Bạc hà mát lạnh 100g",
+        attributes: {
+          "Hương vị": "Bạc hà mát lạnh",
+          "Dung tích": "100g",
+        },
+        price: 45000,
+        sku: "KDR-BH-100",
+        images: ["/images/products/kem-danh-rang-1.jpg"],
+      },
+      {
+        id: "kem-danh-rang-bac-ha-150g",
+        name: "Kem Đánh Răng Fresh Mint - Bạc hà mát lạnh 150g",
+        attributes: {
+          "Hương vị": "Bạc hà mát lạnh",
+          "Dung tích": "150g",
+        },
+        price: 65000,
+        sku: "KDR-BH-150",
+        images: ["/images/products/kem-danh-rang-1.jpg"],
+      },
+      {
+        id: "kem-danh-rang-tra-xanh-100g",
+        name: "Kem Đánh Răng Fresh Mint - Trà xanh 100g",
+        attributes: {
+          "Hương vị": "Trà xanh",
+          "Dung tích": "100g",
+        },
+        price: 48000,
+        sku: "KDR-TX-100",
+        images: ["/images/products/kem-danh-rang-2.jpg"],
+      },
+      {
+        id: "kem-danh-rang-thao-duoc-100g",
+        name: "Kem Đánh Răng Fresh Mint - Thảo dược 100g",
+        attributes: {
+          "Hương vị": "Thảo dược",
+          "Dung tích": "100g",
+        },
+        price: 50000,
+        sku: "KDR-TD-100",
+        images: ["/images/products/kem-danh-rang-2.jpg"],
+      },
+    ],
+    specifications: {
+      "Xuất xứ": "Việt Nam",
+      "Thành phần chính": "Fluoride, Silica, Glycerin",
+      "Hạn sử dụng": "24 tháng kể từ ngày sản xuất",
+      "Hướng dẫn bảo quản": "Nơi khô ráo, tránh ánh nắng trực tiếp",
+    },
+    additionalInfo: {
+      "Đối tượng sử dụng": "Người lớn và trẻ em trên 6 tuổi",
+      "Tần suất sử dụng": "2-3 lần/ngày sau khi ăn",
+    },
+  },
+  {
+    id: "smartphone-galaxy-s22",
+    name: "Smartphone Galaxy S22",
+    slug: "smartphone-galaxy-s22",
+    description:
+      "Điện thoại thông minh với hiệu năng mạnh mẽ, camera chất lượng cao và màn hình sắc nét, mang đến trải nghiệm sử dụng tuyệt vời.",
+    features: [
+      "Màn hình Dynamic AMOLED 2X 6.1 inch",
+      "Chip Exynos 2200 8 nhân",
+      "RAM 8GB, ROM tùy chọn",
+      "Camera sau 50MP, camera trước 10MP",
+      "Pin 3700mAh, sạc nhanh 25W",
+    ],
+    images: [
+      "/images/products/smartphone-1.jpg",
+      "/images/products/smartphone-2.jpg",
+      "/images/products/smartphone-3.jpg",
+    ],
+    price: 14990000,
+    categoryIds: ["dien-tu", "dien-thoai"],
+    productType: "điện tử",
+    brandId: "samsung",
+    isFeatured: true,
+    variantAttributes: [
+      {
+        name: "Màu sắc",
+        values: ["Đen", "Trắng", "Xanh dương"],
+      },
+      {
+        name: "Bộ nhớ trong",
+        values: ["128GB", "256GB", "512GB"],
+      },
+    ],
+    variants: [
+      {
+        id: "smartphone-galaxy-s22-den-128gb",
+        name: "Smartphone Galaxy S22 - Đen 128GB",
+        attributes: {
+          "Màu sắc": "Đen",
+          "Bộ nhớ trong": "128GB",
+        },
+        price: 14990000,
+        sku: "SGS22-DEN-128",
+        images: ["/images/products/smartphone-1.jpg"],
+      },
+      {
+        id: "smartphone-galaxy-s22-den-256gb",
+        name: "Smartphone Galaxy S22 - Đen 256GB",
+        attributes: {
+          "Màu sắc": "Đen",
+          "Bộ nhớ trong": "256GB",
+        },
+        price: 16990000,
+        sku: "SGS22-DEN-256",
+        images: ["/images/products/smartphone-1.jpg"],
+      },
+      {
+        id: "smartphone-galaxy-s22-trang-128gb",
+        name: "Smartphone Galaxy S22 - Trắng 128GB",
+        attributes: {
+          "Màu sắc": "Trắng",
+          "Bộ nhớ trong": "128GB",
+        },
+        price: 14990000,
+        sku: "SGS22-TRG-128",
+        images: ["/images/products/smartphone-2.jpg"],
+      },
+      {
+        id: "smartphone-galaxy-s22-xanh-128gb",
+        name: "Smartphone Galaxy S22 - Xanh dương 128GB",
+        attributes: {
+          "Màu sắc": "Xanh dương",
+          "Bộ nhớ trong": "128GB",
+        },
+        price: 14990000,
+        sku: "SGS22-XNH-128",
+        images: ["/images/products/smartphone-3.jpg"],
+      },
+    ],
+    specifications: {
+      "Màn hình": "Dynamic AMOLED 2X, 6.1 inch, Full HD+",
+      "Hệ điều hành": "Android 12, One UI 4.1",
+      "Chip xử lý": "Exynos 2200 8 nhân",
+      RAM: "8GB",
+      "Camera sau": "Chính 50MP, Góc siêu rộng 12MP, Tele 10MP",
+      "Camera trước": "10MP",
+      Pin: "3700mAh, sạc nhanh 25W",
+      "Kết nối": "5G, Wi-Fi 6, Bluetooth 5.2, NFC",
+      "Chống nước": "IP68",
+    },
+  },
 ];
 
 /**
- * Hàm lấy danh mục theo slug
- * @param {string} slug - Slug của danh mục cần tìm
- * @returns {Category | undefined} - Danh mục tìm thấy hoặc undefined nếu không tìm thấy
+ * Lấy danh mục theo slug
+ * @param {string} slug - Slug của danh mục
+ * @returns {Category | undefined} - Danh mục tìm thấy hoặc undefined
  */
 export function getCategoryBySlug(slug: string): Category | undefined {
   return categories.find((category) => category.slug === slug);
 }
 
 /**
- * Hàm lấy danh mục theo ID
- * @param {string} id - ID của danh mục cần tìm
- * @returns {Category | undefined} - Danh mục tìm thấy hoặc undefined nếu không tìm thấy
+ * Lấy danh mục theo ID
+ * @param {string} id - ID của danh mục
+ * @returns {Category | undefined} - Danh mục tìm thấy hoặc undefined
  */
 export function getCategoryById(id: string): Category | undefined {
   return categories.find((category) => category.id === id);
 }
 
 /**
- * Hàm lấy danh sách các danh mục con của một danh mục
+ * Lấy các danh mục con của một danh mục
  * @param {string} categoryId - ID của danh mục cha
- * @returns {Category[]} - Danh sách các danh mục con
+ * @returns {Category[]} - Danh sách danh mục con
  */
 export function getSubcategories(categoryId: string): Category[] {
   const category = getCategoryById(categoryId);
@@ -333,84 +710,127 @@ export function getSubcategories(categoryId: string): Category[] {
 }
 
 /**
- * Hàm lấy danh sách các danh mục chính (không phải danh mục con)
- * @returns {Category[]} - Danh sách các danh mục chính
+ * Lấy danh sách danh mục chính (không phải danh mục con)
+ * @returns {Category[]} - Danh sách danh mục chính
  */
 export function getMainCategories(): Category[] {
-  const allCategoryIds = categories.map((cat) => cat.id);
-  const allSubcategoryIds = categories.flatMap(
-    (cat) => cat.subcategories || []
-  );
+  // Kiểm tra xem danh mục có xuất hiện trong subcategories của các danh mục khác hay không
+  const subcategories = categories
+    .filter((cat) => cat.subcategories)
+    .flatMap((cat) => cat.subcategories || []);
 
-  return categories.filter((cat) => !allSubcategoryIds.includes(cat.id));
+  // Lọc các danh mục không xuất hiện trong subcategories
+  return categories.filter((cat) => !subcategories.includes(cat.id));
 }
 
 /**
- * Hàm lấy sản phẩm theo slug
- * @param {string} slug - Slug của sản phẩm cần tìm
- * @returns {Product | undefined} - Sản phẩm tìm thấy hoặc undefined nếu không tìm thấy
+ * Lấy sản phẩm theo slug
+ * @param {string} slug - Slug của sản phẩm
+ * @returns {Product | undefined} - Sản phẩm tìm thấy hoặc undefined
  */
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((product) => product.slug === slug);
 }
 
 /**
- * Hàm lấy sản phẩm theo ID
- * @param {string} id - ID của sản phẩm cần tìm
- * @returns {Product | undefined} - Sản phẩm tìm thấy hoặc undefined nếu không tìm thấy
+ * Lấy sản phẩm theo ID
+ * @param {string} id - ID của sản phẩm
+ * @returns {Product | undefined} - Sản phẩm tìm thấy hoặc undefined
  */
 export function getProductById(id: string): Product | undefined {
   return products.find((product) => product.id === id);
 }
 
 /**
- * Hàm lấy danh sách sản phẩm theo danh mục
+ * Lấy variant của sản phẩm theo ID
+ * @param {string} productId - ID của sản phẩm
+ * @param {string} variantId - ID của variant
+ * @returns {ProductVariant | undefined} - Variant tìm thấy hoặc undefined
+ */
+export function getProductVariantById(
+  productId: string,
+  variantId: string
+): ProductVariant | undefined {
+  const product = getProductById(productId);
+  if (!product) return undefined;
+
+  return product.variants.find((variant) => variant.id === variantId);
+}
+
+/**
+ * Lấy danh sách sản phẩm thuộc một danh mục
  * @param {string} categoryId - ID của danh mục
- * @returns {Product[]} - Danh sách sản phẩm thuộc danh mục
+ * @returns {Product[]} - Danh sách sản phẩm
  */
 export function getProductsByCategory(categoryId: string): Product[] {
   return products.filter((product) => product.categoryIds.includes(categoryId));
 }
 
 /**
- * Hàm chuyển đổi sản phẩm sang dạng hiển thị (thêm thông tin danh mục)
+ * Lấy danh sách sản phẩm theo loại sản phẩm
+ * @param {string} productType - Loại sản phẩm
+ * @returns {Product[]} - Danh sách sản phẩm
+ */
+export function getProductsByType(productType: string): Product[] {
+  return products.filter((product) => product.productType === productType);
+}
+
+/**
+ * Chuyển đổi từ Product sang ProductDisplay
  * @param {Product} product - Sản phẩm cần chuyển đổi
- * @returns {ProductDisplay} - Sản phẩm dạng hiển thị
+ * @returns {ProductDisplay} - Sản phẩm hiển thị
  */
 export function convertToProductDisplay(product: Product): ProductDisplay {
+  // Lấy thông tin các danh mục của sản phẩm
   const productCategories = product.categoryIds
-    .map((id) => getCategoryById(id))
-    .filter((cat): cat is Category => cat !== undefined)
-    .map((cat) => ({ id: cat.id, name: cat.name, slug: cat.slug }));
+    .map((id) => {
+      const category = getCategoryById(id);
+      if (!category) return null;
+      return {
+        id: category.id,
+        name: category.name,
+        slug: category.slug,
+      };
+    })
+    .filter((cat): cat is NonNullable<typeof cat> => cat !== null);
 
+  // Lấy thông tin các sản phẩm liên quan
   const relatedProducts = product.relatedProductIds
     ? product.relatedProductIds
-        .map((id) => getProductById(id))
-        .filter((p): p is Product => p !== undefined)
-        .map((p) => ({
-          id: p.id,
-          name: p.name,
-          slug: p.slug,
-          images: p.images,
-          price: p.price,
-          originalPrice: p.originalPrice,
-          availableSizes: p.availableSizes,
-          availableColors: p.availableColors,
-          isFeatured: p.isFeatured,
-          isNew: p.isNew,
-          isOutOfStock: p.isOutOfStock,
-        }))
+        .map((id) => {
+          const relatedProduct = getProductById(id);
+          if (!relatedProduct) return null;
+
+          return {
+            id: relatedProduct.id,
+            name: relatedProduct.name,
+            slug: relatedProduct.slug,
+            price: relatedProduct.price,
+            originalPrice: relatedProduct.originalPrice,
+            images: relatedProduct.images,
+            isFeatured: relatedProduct.isFeatured,
+            isNew: relatedProduct.isNew,
+            isOutOfStock: relatedProduct.isOutOfStock,
+            variants: relatedProduct.variants,
+            variantAttributes: relatedProduct.variantAttributes,
+            productType: relatedProduct.productType,
+            categoryIds: relatedProduct.categoryIds,
+          };
+        })
+        .filter((p): p is NonNullable<typeof p> => p !== null)
     : undefined;
 
+  // Trả về đối tượng ProductDisplay
+  const { categoryIds, relatedProductIds, ...rest } = product;
   return {
-    ...product,
+    ...rest,
     categories: productCategories,
     relatedProducts,
   };
 }
 
 /**
- * Hàm lấy danh sách sản phẩm nổi bật
+ * Lấy danh sách sản phẩm nổi bật
  * @returns {Product[]} - Danh sách sản phẩm nổi bật
  */
 export function getFeaturedProducts(): Product[] {
@@ -418,7 +838,7 @@ export function getFeaturedProducts(): Product[] {
 }
 
 /**
- * Hàm lấy danh sách sản phẩm mới
+ * Lấy danh sách sản phẩm mới
  * @returns {Product[]} - Danh sách sản phẩm mới
  */
 export function getNewProducts(): Product[] {
@@ -426,9 +846,9 @@ export function getNewProducts(): Product[] {
 }
 
 /**
- * Hàm lấy danh sách sản phẩm liên quan của một sản phẩm
+ * Lấy danh sách sản phẩm liên quan
  * @param {string} productId - ID của sản phẩm
- * @param {number} limit - Số lượng sản phẩm liên quan tối đa
+ * @param {number} [limit=4] - Số lượng tối đa sản phẩm trả về
  * @returns {Product[]} - Danh sách sản phẩm liên quan
  */
 export function getRelatedProducts(
@@ -438,7 +858,7 @@ export function getRelatedProducts(
   const product = getProductById(productId);
   if (!product) return [];
 
-  // Nếu sản phẩm có danh sách sản phẩm liên quan
+  // Nếu sản phẩm có định nghĩa sẵn các sản phẩm liên quan
   if (product.relatedProductIds && product.relatedProductIds.length > 0) {
     return product.relatedProductIds
       .map((id) => getProductById(id))
@@ -446,12 +866,52 @@ export function getRelatedProducts(
       .slice(0, limit);
   }
 
-  // Nếu không có danh sách sẵn, lấy sản phẩm trong cùng danh mục
+  // Nếu không, lấy các sản phẩm có cùng loại và danh mục
   return products
     .filter(
       (p) =>
         p.id !== productId &&
-        p.categoryIds.some((catId) => product.categoryIds.includes(catId))
+        (p.productType === product.productType ||
+          p.categoryIds.some((catId) => product.categoryIds.includes(catId)))
     )
     .slice(0, limit);
+}
+
+/**
+ * Lấy danh sách tất cả các loại sản phẩm
+ * @returns {string[]} - Danh sách các loại sản phẩm
+ */
+export function getAllProductTypes(): string[] {
+  const productTypes = new Set<string>();
+
+  products.forEach((product) => {
+    if (product.productType) {
+      productTypes.add(product.productType);
+    }
+  });
+
+  return Array.from(productTypes);
+}
+
+/**
+ * Lấy thông tin một variant sản phẩm dựa trên các thuộc tính
+ * @param {string} productId - ID của sản phẩm
+ * @param {Record<string, string>} attributes - Các thuộc tính của variant cần tìm
+ * @returns {ProductVariant | undefined} - Variant tìm thấy hoặc undefined
+ */
+export function getProductVariantByAttributes(
+  productId: string,
+  attributes: Record<string, string>
+): ProductVariant | undefined {
+  const product = getProductById(productId);
+  if (!product) return undefined;
+
+  // So khớp các thuộc tính
+  return product.variants.find((variant) => {
+    // Kiểm tra xem tất cả các thuộc tính cần tìm có khớp với variant không
+    const attrEntries = Object.entries(attributes);
+    return attrEntries.every(
+      ([key, value]) => variant.attributes[key] === value
+    );
+  });
 }

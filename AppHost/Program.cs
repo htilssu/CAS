@@ -7,14 +7,14 @@ var postgresBuilder = builder.AddPostgres("postgres")
     .WithImageTag("latest")
     .WithLifetime(ContainerLifetime.Persistent);
 
-var catalogDb = postgresBuilder.AddDatabase("catalogdb");
+var catalogDb = postgresBuilder.AddDatabase("productdb");
 var identityDb = postgresBuilder.AddDatabase("identitydb");
 
 var redis = builder.AddRedis("redis");
 var rabbitMq = builder.AddRabbitMQ("eventbus")
     .WithLifetime(ContainerLifetime.Persistent);
 
-var catalog = builder.AddProject<Catalog_API>("catalog")
+var catalog = builder.AddProject<Product_API>("product")
     .WithReference(redis)
     .WithReference(catalogDb);
 

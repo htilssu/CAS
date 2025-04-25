@@ -1,9 +1,9 @@
-﻿using Catalog.API.Domain.Interfaces;
-using Catalog.API.Infrastructure.Data;
-using Catalog.API.Infrastructure.Repositories;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Product.API.Domain.Interfaces;
+using Product.API.Infrastructure.Data;
+using Product.API.Infrastructure.Repositories;
 
-namespace Catalog.API.Extension;
+namespace Product.API.Extension;
 
 public static class Extensions
 {

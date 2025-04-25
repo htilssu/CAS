@@ -1,4 +1,5 @@
 import { ProductCard } from "@/components/product/ProductCard";
+import { ProductVariant } from "@/lib/types";
 
 /**
  * Giao diện cho dữ liệu sản phẩm trong lưới
@@ -13,6 +14,8 @@ import { ProductCard } from "@/components/product/ProductCard";
  * @property {boolean} [isFeatured] - Có phải là sản phẩm nổi bật
  * @property {boolean} [isNew] - Có phải là sản phẩm mới
  * @property {boolean} [isOutOfStock] - Sản phẩm hết hàng
+ * @property {string} [productType] - Loại sản phẩm
+ * @property {ProductVariant[]} [variants] - Các biến thể của sản phẩm
  */
 interface Product {
   id: string;
@@ -25,6 +28,8 @@ interface Product {
   isFeatured?: boolean;
   isNew?: boolean;
   isOutOfStock?: boolean;
+  productType?: string;
+  variants?: ProductVariant[];
 }
 
 /**

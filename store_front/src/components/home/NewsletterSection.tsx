@@ -1,4 +1,5 @@
-import { NewsletterForm } from "./newsletter-form";
+import { NewsletterForm } from "./NewsletterForm";
+import Link from "next/link";
 
 /**
  * Thành phần hiển thị form đăng ký nhận thông tin khuyến mãi
@@ -21,9 +22,9 @@ export function NewsletterSection() {
 
           <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
             Bằng cách đăng ký, bạn đồng ý với{" "}
-            <a href="/privacy" className="underline hover:text-indigo-600">
+            <Link href="/privacy" className="underline hover:text-indigo-600">
               chính sách bảo mật
-            </a>{" "}
+            </Link>{" "}
             của chúng tôi.
           </p>
         </div>

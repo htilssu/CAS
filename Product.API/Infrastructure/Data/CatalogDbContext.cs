@@ -1,8 +1,8 @@
-using Catalog.API.Domain.Entities;
+using Product.API.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace Catalog.API.Infrastructure.Data;
+namespace Product.API.Infrastructure.Data;
 
 public class CatalogDbContext : DbContext
 {
@@ -10,7 +10,7 @@ public class CatalogDbContext : DbContext
     {
     }
 
-    public DbSet<Product> Products { get; set; }
+    public DbSet<Domain.Entities.Product> Products { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

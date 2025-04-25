@@ -20,6 +20,42 @@ export interface Category {
 }
 
 /**
+ * Interface cho thuộc tính của variant sản phẩm
+ * @interface VariantAttribute
+ * @property {string} name - Tên thuộc tính (ví dụ: "Màu sắc", "Kích thước", "Hương vị", "Dung tích")
+ * @property {string[]} values - Danh sách giá trị có thể có của thuộc tính
+ */
+export interface VariantAttribute {
+  name: string;
+  values: string[];
+}
+
+/**
+ * Interface cho variant của sản phẩm
+ * @interface ProductVariant
+ * @property {string} id - ID của variant
+ * @property {string} name - Tên của variant
+ * @property {Record<string, string>} attributes - Các thuộc tính của variant (dạng key-value)
+ * @property {number} price - Giá của variant
+ * @property {number} [originalPrice] - Giá gốc của variant (nếu có giảm giá)
+ * @property {string} [sku] - Mã SKU của variant
+ * @property {boolean} [isOutOfStock] - Variant hết hàng hay không
+ * @property {number} [stockQuantity] - Số lượng tồn kho
+ * @property {string[]} images - Danh sách hình ảnh của variant
+ */
+export interface ProductVariant {
+  id: string;
+  name: string;
+  attributes: Record<string, string>;
+  price: number;
+  originalPrice?: number;
+  sku?: string;
+  isOutOfStock?: boolean;
+  stockQuantity?: number;
+  images: string[];
+}
+
+/**
  * Interface cho sản phẩm
  * @interface Product
  * @property {string} id - ID của sản phẩm
@@ -27,17 +63,20 @@ export interface Category {
  * @property {string} slug - Slug URL của sản phẩm
  * @property {string} description - Mô tả sản phẩm
  * @property {string[]} features - Danh sách tính năng/đặc điểm của sản phẩm
- * @property {string[]} images - Danh sách hình ảnh sản phẩm
- * @property {number} price - Giá hiện tại của sản phẩm
+ * @property {string[]} images - Danh sách hình ảnh sản phẩm chung
+ * @property {number} price - Giá cơ bản của sản phẩm
  * @property {number} [originalPrice] - Giá gốc của sản phẩm (nếu có giảm giá)
  * @property {string[]} categoryIds - Danh sách ID của các danh mục mà sản phẩm thuộc về
- * @property {string[]} availableSizes - Danh sách kích thước có sẵn
- * @property {string[]} availableColors - Danh sách màu sắc có sẵn
+ * @property {string} productType - Loại sản phẩm (ví dụ: "quần áo", "mỹ phẩm", "điện tử", "thực phẩm")
+ * @property {string} [brandId] - ID của thương hiệu (nếu có)
  * @property {boolean} [isFeatured] - Sản phẩm được đánh dấu là nổi bật hay không
  * @property {boolean} [isNew] - Sản phẩm mới hay không
- * @property {boolean} [isOutOfStock] - Sản phẩm hết hàng hay không
+ * @property {boolean} [isOutOfStock] - Tất cả variant của sản phẩm đều hết hàng
  * @property {string[]} [relatedProductIds] - Danh sách ID của các sản phẩm liên quan
- * @property {string} [brandId] - ID của thương hiệu (nếu có)
+ * @property {VariantAttribute[]} variantAttributes - Các thuộc tính biến thể của sản phẩm
+ * @property {ProductVariant[]} variants - Danh sách các biến thể của sản phẩm
+ * @property {Record<string, string>} [specifications] - Thông số kỹ thuật của sản phẩm (cho sản phẩm điện tử, đồ gia dụng)
+ * @property {Record<string, string>} [additionalInfo] - Thông tin bổ sung theo loại sản phẩm
  */
 export interface Product {
   id: string;
@@ -49,13 +88,20 @@ export interface Product {
   price: number;
   originalPrice?: number;
   categoryIds: string[];
-  availableSizes: string[];
-  availableColors: string[];
+  productType: string;
+  brandId?: string;
   isFeatured?: boolean;
   isNew?: boolean;
   isOutOfStock?: boolean;
   relatedProductIds?: string[];
-  brandId?: string;
+  variantAttributes: VariantAttribute[];
+  variants: ProductVariant[];
+  specifications?: Record<string, string>;
+  additionalInfo?: Record<string, string>;
+
+  // Các trường hỗ trợ ngược cho các sản phẩm cũ
+  availableSizes?: string[];
+  availableColors?: string[];
 }
 
 /**
@@ -77,22 +123,24 @@ export interface ProductDisplay
 /**
  * Interface cho mặt hàng trong giỏ hàng
  * @interface CartItem
- * @property {string} id - ID của sản phẩm
- * @property {string} name - Tên sản phẩm
- * @property {string} slug - Slug URL của sản phẩm
+ * @property {string} productId - ID của sản phẩm
+ * @property {string} productName - Tên sản phẩm
+ * @property {string} productSlug - Slug URL của sản phẩm
+ * @property {string} variantId - ID của variant sản phẩm
+ * @property {string} variantName - Tên của variant sản phẩm
  * @property {string} image - Đường dẫn hình ảnh sản phẩm
  * @property {number} price - Giá sản phẩm
- * @property {string} size - Kích thước đã chọn
- * @property {string} color - Màu sắc đã chọn
+ * @property {Record<string, string>} attributes - Các thuộc tính của variant đã chọn
  * @property {number} quantity - Số lượng
  */
 export interface CartItem {
-  id: string;
-  name: string;
-  slug: string;
+  productId: string;
+  productName: string;
+  productSlug: string;
+  variantId: string;
+  variantName: string;
   image: string;
   price: number;
-  size: string;
-  color: string;
+  attributes: Record<string, string>;
   quantity: number;
 }

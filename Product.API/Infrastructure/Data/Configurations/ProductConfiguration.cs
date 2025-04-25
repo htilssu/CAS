@@ -1,12 +1,12 @@
-using Catalog.API.Domain.Entities;
+using Product.API.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Catalog.API.Infrastructure.Data.Configurations;
+namespace Product.API.Infrastructure.Data.Configurations;
 
-public class ProductConfiguration : IEntityTypeConfiguration<Product>
+public class ProductConfiguration : IEntityTypeConfiguration<Domain.Entities.Product>
 {
-    public void Configure(EntityTypeBuilder<Product> builder)
+    public void Configure(EntityTypeBuilder<Domain.Entities.Product> builder)
     {
         builder.HasKey(p => p.Id);
         

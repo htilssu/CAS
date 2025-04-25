@@ -1,21 +1,14 @@
-import { HeroSection } from "@/components/home/HeroSection";
-import { CategoriesSection } from "@/components/home/CategoriesSection";
-import { FeaturedSection } from "@/components/home/FeaturedSection";
-import { PromoBanner } from "@/components/home/PromoBanner";
-import { NewsletterSection } from "@/components/home/NewsletterSection";
+import { Suspense } from "react";
+import HomeContent from "@/components/home/HomeContent";
 
 /**
  * Trang chủ của ứng dụng
- * @returns {JSX.Element} - Thành phần trang chủ được render
+ * @returns {JSX.Element} - Thành phần trang chủ
  */
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <HeroSection />
-      <CategoriesSection />
-      <FeaturedSection />
-      <PromoBanner />
-      <NewsletterSection />
-    </>
+    <Suspense fallback={<div>Đang tải nội dung trang chủ...</div>}>
+      <HomeContent />
+    </Suspense>
   );
 }

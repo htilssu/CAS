@@ -1,9 +1,9 @@
-using Catalog.API.Domain.Entities;
-using Catalog.API.Domain.Interfaces;
-using Catalog.API.Infrastructure.Data;
+using Product.API.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Product.API.Domain.Interfaces;
+using Product.API.Infrastructure.Data;
 
-namespace Catalog.API.Infrastructure.Repositories;
+namespace Product.API.Infrastructure.Repositories;
 
 public class ProductRepository : IProductRepository
 {
@@ -14,30 +14,30 @@ public class ProductRepository : IProductRepository
         _context = context;
     }
 
-    public async Task<Product> GetByIdAsync(int id)
+    public async Task<Domain.Entities.Product> GetByIdAsync(int id)
     {
         return await _context.Products.FindAsync(id);
     }
 
-    public async Task<IEnumerable<Product>> GetAllAsync()
+    public async Task<IEnumerable<Domain.Entities.Product>> GetAllAsync()
     {
         return await _context.Products.ToListAsync();
     }
 
-    public async Task<IEnumerable<Product>> GetByCategoryAsync(string category)
+    public async Task<IEnumerable<Domain.Entities.Product>> GetByCategoryAsync(string category)
     {
         return await _context.Products
             .Where(p => p.Category == category)
             .ToListAsync();
     }
 
-    public async Task AddAsync(Product product)
+    public async Task AddAsync(Domain.Entities.Product product)
     {
         await _context.Products.AddAsync(product);
         await _context.SaveChangesAsync();
     }
 
-    public async Task UpdateAsync(Product product)
+    public async Task UpdateAsync(Domain.Entities.Product product)
     {
         _context.Products.Update(product);
         await _context.SaveChangesAsync();

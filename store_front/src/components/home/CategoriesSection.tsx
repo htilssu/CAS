@@ -1,46 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-
-/**
- * Dữ liệu danh mục sản phẩm
- * @type {Array<{id: string, name: string, slug: string, image: string}>}
- */
-const categories = [
-  {
-    id: "category-1",
-    name: "Áo",
-    slug: "ao",
-    image:
-      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-  },
-  {
-    id: "category-2",
-    name: "Quần",
-    slug: "quan",
-    image:
-      "https://images.unsplash.com/photo-1560243563-062bfc001d68?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-  },
-  {
-    id: "category-3",
-    name: "Giày",
-    slug: "giay",
-    image:
-      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-  },
-  {
-    id: "category-4",
-    name: "Phụ kiện",
-    slug: "phu-kien",
-    image:
-      "https://images.unsplash.com/photo-1589782182703-2aaa69037b5b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-  },
-];
+import { getMainCategories } from "@/lib/data";
 
 /**
  * Thành phần hiển thị phần danh mục sản phẩm trên trang chủ
  * @returns {JSX.Element} - Thành phần CategoriesSection được render
  */
 export function CategoriesSection() {
+  // Lấy danh mục chính từ data
+  const categories = getMainCategories();
+
   return (
     <section className="bg-zinc-50 py-12 dark:bg-zinc-900 md:py-16">
       <div className="container mx-auto px-4">
@@ -55,12 +24,12 @@ export function CategoriesSection() {
           {categories.map((category) => (
             <Link
               key={category.id}
-              href={`/category/${category.slug}`}
+              href={`/products?category=${category.id}`}
               className="group relative overflow-hidden rounded-lg"
             >
               <div className="aspect-square w-full overflow-hidden">
                 <Image
-                  src={category.image}
+                  src={category.image || "/images/placeholder.svg"}
                   alt={category.name}
                   width={600}
                   height={600}

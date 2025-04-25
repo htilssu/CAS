@@ -1,0 +1,5 @@
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#e3f2fd"/>
+  <path d="M200,100 L400,100 L380,500 L300,500 L280,350 L260,500 L180,500 Z" fill="#64b5f6" stroke="#1565c0" stroke-width="10"/>
+  <text x="50%" y="300" font-family="Arial" font-size="48" text-anchor="middle" fill="#0d47a1" font-weight="bold">QUẦN</text>
+</svg>
