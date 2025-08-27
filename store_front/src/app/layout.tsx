@@ -1,27 +1,28 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "StoreFront - Cửa hàng trực tuyến hàng đầu",
-  description:
-    "Khám phá bộ sưu tập đa dạng với những thiết kế độc đáo, phong cách và thoải mái",
+  title: "StoreFront - Modern E-commerce Store",
+  description: "Discover amazing products at unbeatable prices. Your go-to destination for quality shopping.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="vi">
-      <body
-        className="antialiased min-h-screen flex flex-col font-sans"
-      >
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html lang="en">
+      <body className="font-sans">
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
