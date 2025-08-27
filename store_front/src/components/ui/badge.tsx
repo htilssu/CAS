@@ -20,17 +20,17 @@ function Badge({ className, variant = "default", ...props }: BadgeProps) {
   return (
     <div
       className={cn(
-        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2",
+        "inline-flex items-center rounded-full border px-3 py-1 text-xs font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-sm",
         {
-          "border-transparent bg-indigo-500 text-white hover:bg-indigo-600":
+          "border-transparent bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-lg":
             variant === "default",
-          "border-zinc-200 text-zinc-900 hover:bg-zinc-100 dark:border-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800":
+          "border-slate-200 text-slate-700 bg-white hover:bg-slate-50 shadow-sm":
             variant === "outline",
-          "border-transparent bg-emerald-500 text-white hover:bg-emerald-600":
+          "border-transparent bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg":
             variant === "success",
-          "border-transparent bg-red-500 text-white hover:bg-red-600":
+          "border-transparent bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg":
             variant === "error",
-          "border-transparent bg-amber-500 text-white hover:bg-amber-600":
+          "border-transparent bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg":
             variant === "warning",
         },
         className

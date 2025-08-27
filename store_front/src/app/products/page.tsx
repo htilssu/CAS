@@ -5,14 +5,16 @@ import ProductsContent from "@/components/product/ProductsContent";
  * Trang hiển thị danh sách sản phẩm
  * @returns {React.ReactElement} - Trang sản phẩm
  */
-export default function ProductsPage({
+export default async function ProductsPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  const params = await searchParams;
+  
   return (
     <Suspense fallback={<div>Đang tải dữ liệu sản phẩm...</div>}>
-      <ProductsContent searchParams={searchParams} />
+      <ProductsContent searchParams={params} />
     </Suspense>
   );
 }

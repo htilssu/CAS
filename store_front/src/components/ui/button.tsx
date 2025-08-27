@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
  */
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean;
-  variant?: "default" | "primary" | "outline" | "ghost" | "link";
+  variant?: "default" | "primary" | "outline" | "ghost" | "link" | "gradient";
   size?: "default" | "sm" | "lg" | "icon";
 }
 
@@ -37,24 +37,26 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center whitespace-nowrap rounded-lg font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 shadow-sm",
           {
-            "bg-zinc-900 text-zinc-50 hover:bg-zinc-900/90 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90":
+            "bg-slate-900 text-white hover:bg-slate-800 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5":
               variant === "default",
-            "bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm":
+            "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5":
               variant === "primary",
-            "border border-zinc-200 hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50":
+            "bg-gradient-to-r from-violet-600 to-purple-600 text-white hover:from-violet-700 hover:to-purple-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5":
+              variant === "gradient",
+            "border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 text-slate-900":
               variant === "outline",
-            "hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-50":
+            "hover:bg-slate-100 text-slate-700 hover:text-slate-900":
               variant === "ghost",
-            "text-indigo-600 underline-offset-4 hover:underline":
+            "text-blue-600 underline-offset-4 hover:underline font-medium":
               variant === "link",
           },
           {
-            "h-10 px-4 py-2 text-sm": size === "default",
-            "h-9 rounded-md px-3 text-xs": size === "sm",
-            "h-11 rounded-md px-8 text-base": size === "lg",
-            "h-10 w-10 p-0": size === "icon",
+            "h-10 px-6 py-2 text-sm": size === "default",
+            "h-9 rounded-lg px-4 text-xs": size === "sm",
+            "h-12 rounded-lg px-8 text-base": size === "lg",
+            "h-10 w-10 p-0 rounded-lg": size === "icon",
           },
           className
         )}

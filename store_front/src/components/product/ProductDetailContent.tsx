@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Heart, ShoppingCart, TruckIcon } from "lucide-react";
 
-import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
