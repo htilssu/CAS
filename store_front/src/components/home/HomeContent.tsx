@@ -1,44 +1,37 @@
 "use client";
 
-import { HeroSlider } from "@/components/home/HeroSlider";
-import { CategoriesGrid } from "@/components/home/CategoriesGrid";
-import { FeaturedProductsSection } from "@/components/home/FeaturedProductsSection";
-import { ProductTypeSection } from "@/components/home/ProductTypeSection";
-import { FlashSaleSection } from "@/components/home/FlashSaleSection";
-import { PromoBanner } from "@/components/home/PromoBanner";
-import { BrandsSection } from "@/components/home/BrandsSection";
-import { RecentlyViewedSection } from "@/components/home/RecentlyViewedSection";
-import { NewsletterSection } from "@/components/home/NewsletterSection";
-import { getAllProductTypes } from "@/lib/data";
+import { ImmersiveHero } from "@/components/home/ImmersiveHero";
+import { DiscoverySection } from "@/components/home/DiscoverySection";
+import { TrendingNowSection } from "@/components/home/TrendingNowSection";
+import { CuratedCollections } from "@/components/home/CuratedCollections";
+import { SmartRecommendations } from "@/components/home/SmartRecommendations";
+import { MinimalistFooter } from "@/components/home/MinimalistFooter";
 
 /**
- * Component hiển thị nội dung trang chủ
- * @returns {JSX.Element} - Thành phần nội dung trang chủ
+ * Component hiển thị nội dung trang chủ với thiết kế hoàn toàn mới
+ * Không theo format truyền thống, tập trung vào trải nghiệm tương tác và AI
+ * @returns {JSX.Element} - Thành phần nội dung trang chủ hiện đại
  */
 export default function HomeContent() {
-  // Lấy tất cả loại sản phẩm từ dữ liệu
-  const productTypes = getAllProductTypes();
-
   return (
     <>
-      <HeroSlider />
-      <FlashSaleSection />
-      <CategoriesGrid />
-      <FeaturedProductsSection />
-
-      {/* Hiển thị các phần theo từng loại sản phẩm */}
-      {productTypes.map((type, index) => (
-        <ProductTypeSection
-          key={type}
-          productType={type}
-          variant={index % 2 === 0 ? "default" : "alternate"}
-        />
-      ))}
-
-      <PromoBanner />
-      <BrandsSection />
-      <RecentlyViewedSection />
-      <NewsletterSection />
+      {/* Hero Section - Immersive với animation và interactive */}
+      <ImmersiveHero />
+      
+      {/* Discovery Section - Tìm kiếm và khám phá thông minh */}
+      <DiscoverySection />
+      
+      {/* Trending Now - Real-time trends như social media */}
+      <TrendingNowSection />
+      
+      {/* Curated Collections - Magazine-style product showcases */}
+      <CuratedCollections />
+      
+      {/* Smart Recommendations - AI-powered personalization */}
+      <SmartRecommendations />
+      
+      {/* Minimalist Footer - Clean và simple */}
+      <MinimalistFooter />
     </>
   );
 }
