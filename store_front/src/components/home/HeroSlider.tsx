@@ -77,10 +77,10 @@ export function HeroSlider() {
   };
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden rounded-3xl mx-4 md:mx-8 mb-8 shadow-2xl">
       {/* Control buttons */}
       <button
-        className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/30 p-2 text-white backdrop-blur-sm transition-all hover:bg-white/50"
+        className="absolute left-6 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur-lg transition-all hover:bg-white/30 hover:scale-110 shadow-lg border border-white/20"
         onClick={prevSlide}
         aria-label="Slide trước"
       >
@@ -88,7 +88,7 @@ export function HeroSlider() {
       </button>
 
       <button
-        className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/30 p-2 text-white backdrop-blur-sm transition-all hover:bg-white/50"
+        className="absolute right-6 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur-lg transition-all hover:bg-white/30 hover:scale-110 shadow-lg border border-white/20"
         onClick={nextSlide}
         aria-label="Slide tiếp theo"
       >
@@ -96,13 +96,15 @@ export function HeroSlider() {
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 space-x-2">
+      <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 space-x-3">
         {sliderData.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrent(index)}
-            className={`h-2 w-8 rounded-full transition-all ${
-              index === current ? "bg-white" : "bg-white/50"
+            className={`h-3 w-10 rounded-full transition-all duration-300 ${
+              index === current 
+                ? "bg-white shadow-lg scale-110" 
+                : "bg-white/50 hover:bg-white/70"
             }`}
             aria-label={`Chuyển đến slide ${index + 1}`}
           />
@@ -116,7 +118,7 @@ export function HeroSlider() {
             key={slide.id}
             className={`${
               index === current ? "block" : "hidden"
-            } relative h-[500px] w-full transition-all duration-500 ease-in-out`}
+            } relative h-[600px] w-full transition-all duration-700 ease-out`}
           >
             <Image
               src={slide.image}
@@ -127,14 +129,16 @@ export function HeroSlider() {
             />
             <div className={`absolute inset-0 ${slide.color}`} />
             <div className="absolute inset-0 flex items-center justify-start">
-              <div className="container px-4">
-                <div className="max-w-lg space-y-4 text-white">
-                  <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+              <div className="container px-8 md:px-12">
+                <div className="max-w-2xl space-y-6 text-white">
+                  <h1 className="text-5xl font-black tracking-tight md:text-6xl lg:text-7xl bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent animate-fade-in">
                     {slide.title}
                   </h1>
-                  <p className="text-base md:text-lg">{slide.subtitle}</p>
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <Button size="lg" variant="primary" asChild>
+                  <p className="text-xl md:text-2xl font-medium text-white/90 leading-relaxed">
+                    {slide.subtitle}
+                  </p>
+                  <div className="mt-10 flex flex-wrap gap-4">
+                    <Button size="lg" variant="gradient" asChild className="font-bold text-lg px-8 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
                       <Link href={slide.buttonLink}>{slide.buttonText}</Link>
                     </Button>
                   </div>
@@ -152,7 +156,7 @@ export function HeroSlider() {
             key={slide.id}
             className={`${
               index === current ? "block" : "hidden"
-            } relative aspect-[4/5] w-full transition-all duration-500 ease-in-out`}
+            } relative aspect-[4/5] w-full transition-all duration-700 ease-out`}
           >
             <Image
               src={slide.mobileImage}
@@ -161,16 +165,16 @@ export function HeroSlider() {
               priority
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-            <div className="absolute inset-0 flex items-end justify-center pb-16">
-              <div className="container px-4 text-center">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+            <div className="absolute inset-0 flex items-end justify-center pb-20">
+              <div className="container px-6 text-center">
                 <div className="mx-auto space-y-4 text-white">
-                  <h1 className="text-3xl font-bold tracking-tight">
+                  <h1 className="text-4xl font-black tracking-tight bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
                     {slide.title}
                   </h1>
-                  <p className="text-sm">{slide.subtitle}</p>
+                  <p className="text-lg text-white/90 font-medium">{slide.subtitle}</p>
                   <div className="mt-8 flex flex-col gap-3 pt-2">
-                    <Button variant="primary" asChild>
+                    <Button variant="gradient" asChild className="font-bold rounded-2xl">
                       <Link href={slide.buttonLink}>{slide.buttonText}</Link>
                     </Button>
                   </div>

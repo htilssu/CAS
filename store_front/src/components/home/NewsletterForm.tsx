@@ -15,7 +15,7 @@ export function NewsletterForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row"
+      className="mx-auto mt-8 flex max-w-lg flex-col gap-4 sm:flex-row"
     >
       <div className="flex-1">
         <label htmlFor="email" className="sr-only">
@@ -25,11 +25,17 @@ export function NewsletterForm() {
           type="email"
           id="email"
           placeholder="Nhập địa chỉ email của bạn"
-          className="h-10 w-full rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-zinc-800 dark:bg-zinc-950"
+          className="h-14 w-full rounded-2xl border-0 bg-white/20 backdrop-blur-sm px-6 py-4 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/30 transition-all text-lg"
           required
         />
       </div>
-      <Button variant="primary">Đăng ký</Button>
+      <Button 
+        variant="default" 
+        size="lg"
+        className="bg-white text-slate-900 hover:bg-white/90 font-bold text-lg px-8 py-4 h-14 rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+      >
+        Đăng ký
+      </Button>
     </form>
   );
 }
