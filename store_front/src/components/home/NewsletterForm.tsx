@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 /**
  * Form đăng ký nhận thông tin khuyến mãi (Client Component)

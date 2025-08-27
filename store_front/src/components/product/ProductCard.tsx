@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Heart } from "lucide-react";
 
-import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
-import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/Card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import { ProductVariant } from "@/lib/types";
 
 /**
@@ -77,89 +77,95 @@ export function ProductCard({
   }
 
   return (
-    <Card className="group overflow-hidden transition-all hover:shadow-md">
+    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white/80 backdrop-blur-sm border-0 rounded-2xl">
       <Link
         href={`/products/${slug}`}
-        className="relative block aspect-square overflow-hidden"
+        className="relative block aspect-square overflow-hidden rounded-t-2xl"
       >
         {(isFeatured || isNew || discountPercentage > 0 || isOutOfStock) && (
-          <div className="absolute left-2 top-2 z-10 flex flex-col gap-1">
-            {isNew && <Badge variant="default">Mới</Badge>}
-            {isFeatured && <Badge variant="success">Nổi bật</Badge>}
+          <div className="absolute left-3 top-3 z-10 flex flex-col gap-2">
+            {isNew && <Badge variant="default" className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-0 shadow-lg">Mới</Badge>}
+            {isFeatured && <Badge variant="success" className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white border-0 shadow-lg">Nổi bật</Badge>}
             {discountPercentage > 0 && (
-              <Badge variant="error">-{discountPercentage}%</Badge>
+              <Badge variant="error" className="bg-gradient-to-r from-red-500 to-pink-500 text-white border-0 shadow-lg animate-pulse">-{discountPercentage}%</Badge>
             )}
-            {isOutOfStock && <Badge variant="outline">Hết hàng</Badge>}
+            {isOutOfStock && <Badge variant="outline" className="bg-white/90 backdrop-blur-sm">Hết hàng</Badge>}
           </div>
         )}
 
         <Button
           variant="ghost"
           size="icon"
-          className="absolute right-2 top-2 z-10 opacity-0 transition-opacity group-hover:opacity-100"
+          className="absolute right-3 top-3 z-10 opacity-0 transition-all duration-300 group-hover:opacity-100 bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg rounded-full"
           aria-label="Thêm vào danh sách yêu thích"
         >
-          <Heart className="h-5 w-5" />
+          <Heart className="h-4 w-4 text-slate-600 hover:text-red-500 transition-colors" />
         </Button>
 
         <Image
           src={image}
           alt={name}
           fill
-          className={`object-cover transition-transform duration-300 group-hover:scale-105 ${
-            isOutOfStock ? "opacity-70" : ""
+          className={`object-cover transition-all duration-500 group-hover:scale-110 ${
+            isOutOfStock ? "opacity-70 grayscale" : ""
           }`}
         />
+        
+        {/* Overlay gradient on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Link>
 
-      <CardContent className="p-4">
-        <div className="flex justify-between">
-          <div className="text-sm text-zinc-500 dark:text-zinc-400">
+      <CardContent className="p-5">
+        <div className="flex justify-between items-start mb-2">
+          <div className="text-sm font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded-full">
             {category}
           </div>
           {productType && (
-            <Badge variant="outline" className="text-xs">
+            <Badge variant="outline" className="text-xs bg-gradient-to-r from-violet-100 to-purple-100 text-violet-700 border-violet-200">
               {productType}
             </Badge>
           )}
         </div>
-        <Link href={`/products/${slug}`}>
-          <CardTitle className="mt-1 line-clamp-1 text-base hover:underline">
+        
+        <Link href={`/products/${slug}`} className="group/title">
+          <CardTitle className="text-lg font-bold text-slate-900 group-hover/title:text-blue-600 transition-colors duration-200 line-clamp-2 leading-tight">
             {name}
           </CardTitle>
         </Link>
 
         {variants && variants.length > 1 && (
-          <div className="mt-2 text-xs text-zinc-500">
+          <div className="mt-2 text-sm text-slate-500 font-medium">
             {variants.length} phiên bản
           </div>
         )}
       </CardContent>
 
-      <CardFooter className="flex items-center justify-between p-4 pt-0">
-        <div className="flex items-center gap-2">
+      <CardFooter className="flex items-center justify-between p-5 pt-0">
+        <div className="flex flex-col gap-1">
           {hasPriceVariation ? (
-            <div className="font-medium">
+            <div className="font-bold text-lg text-slate-900">
               {minPrice === maxPrice
                 ? `${minPrice.toLocaleString()}₫`
                 : `${minPrice.toLocaleString()} - ${maxPrice.toLocaleString()}₫`}
             </div>
           ) : (
             <>
-              <div className="font-medium">{price.toLocaleString()}₫</div>
+              <div className="font-bold text-lg text-slate-900">{price.toLocaleString()}₫</div>
               {originalPrice && (
-                <div className="text-sm text-zinc-500 line-through dark:text-zinc-400">
+                <div className="text-sm text-slate-400 line-through">
                   {originalPrice.toLocaleString()}₫
                 </div>
               )}
             </>
           )}
         </div>
+        
         <Button
-          variant="outline"
+          variant={isOutOfStock ? "outline" : "primary"}
           size="sm"
           disabled={isOutOfStock}
           aria-label="Thêm vào giỏ hàng"
+          className="font-semibold"
         >
           {isOutOfStock ? "Hết hàng" : "Xem chi tiết"}
         </Button>
