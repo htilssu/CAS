@@ -1,14 +1,15 @@
-import { Suspense } from "react";
-import HomeContent from "@/components/home/HomeContent";
+import { Hero } from "@/components/sections/Hero";
+import { FeaturedProducts } from "@/components/sections/FeaturedProducts";
+import { Categories } from "@/components/sections/Categories";
+import { Newsletter } from "@/components/sections/Newsletter";
 
-/**
- * Trang chủ của ứng dụng
- * @returns {JSX.Element} - Thành phần trang chủ
- */
-export default function HomePage() {
+export default function Home() {
   return (
-    <Suspense fallback={<div>Đang tải nội dung trang chủ...</div>}>
-      <HomeContent />
-    </Suspense>
+    <div className="space-y-16">
+      <Hero />
+      <FeaturedProducts />
+      <Categories />
+      <Newsletter />
+    </div>
   );
 }
