@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AppHost/AppHost.csproj" />
+    <Project Path="src/Basket.API/Basket.API.csproj" />
+    <Project Path="src/Catalog.API/Catalog.API.csproj" />
+    <Project Path="src/Core/Core.csproj" />
+    <Project Path="src/Identity.API/Identity.API.csproj" />
+    <Project Path="src/Notify.API/Notify.API.csproj" />
+    <Project Path="src/ServiceDefaults/ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/Tests/" />
+</Solution>
