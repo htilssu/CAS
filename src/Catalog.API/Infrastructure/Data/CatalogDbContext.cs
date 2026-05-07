@@ -17,6 +17,6 @@ public class CatalogDbContext : DbContext
         base.OnModelCreating(modelBuilder);
         
         // Apply all configurations from this assembly
-        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogDbContext).Assembly);
     }
 }
